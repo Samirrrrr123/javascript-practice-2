@@ -11,16 +11,13 @@ const router = createRouter({
     { path: '/home', component: HomeView },
     { path: '/users', component: UsersView },
     { path: '/login', component: LoginView },
-    { path: '/profile', component: ProfileView, meta: { requiresAuth: true } },
+    { path: '/profile', component: ProfileView },
     { path: '/:pathMatch(.*)*', redirect: '/home' },
   ],
-  scrollBehavior() {
-    return { top: 0 }
-  },
 })
 
 router.beforeEach((to) => {
-  if (to.meta.requiresAuth && !localStorage.getItem('token')) {
+  if (to.path === '/profile' && !localStorage.getItem('token')) {
     return '/login'
   }
 })
