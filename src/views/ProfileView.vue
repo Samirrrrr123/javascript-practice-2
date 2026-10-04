@@ -11,7 +11,6 @@ export default {
       })
       const data = await response.json()
       if (!response.ok) {
-        if (response.status === 401) localStorage.removeItem('token')
         throw new Error(data.message || 'Failed to load profile')
       }
       this.user = data
@@ -26,7 +25,8 @@ export default {
 
 <template>
   <section class="profile-page">
-    <h1 :class="{ error: error }" :role="error ? 'alert' : undefined">{{ error || 'My profile' }}</h1>
+    <h1 v-if="error" class="error" role="alert">{{ error }}</h1>
+    <h1 v-else>My profile</h1>
     <p v-if="loading" role="status">Loading profile...</p>
     <div v-else-if="user" class="profile-content">
       <div class="profile-details">
