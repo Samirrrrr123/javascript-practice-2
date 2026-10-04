@@ -16,8 +16,7 @@ h1 { font-size: 44px; line-height: 1.2; margin: 0; }
 .authorization-button:hover { background: #ea5050; }
 .home-image { width: 285px; height: 285px; object-fit: contain; }
 .footer { text-align: center; padding: 40px 20px 78px; }
-.social-icons { display: flex; justify-content: center; align-items: center; gap: 35px; }
-.social-icons svg { width: 32px; height: 32px; }
+.social-icons { display: block; width: 233px; height: 32px; margin: 0 auto; }
 .footer p { margin: 26px 0 14px; font-size: 14px; }
 .login-page { display: flex; justify-content: center; padding: 160px 20px 60px; }
 .login-card { width: 336px; min-height: 278px; padding: 20px 16px 36px; border-radius: 11px; box-shadow: 0 3px 8px #0003; color: #222; }
